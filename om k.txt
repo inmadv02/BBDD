@@ -1,0 +1,3 @@
+Si tenemos una tabla que tiene muchas claves externas, 
+¿tendríamos que insertar datos en esa tabla, y en las
+ que están relacionadas a ella, poner los mismos datos?

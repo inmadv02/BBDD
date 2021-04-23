@@ -1,0 +1,34 @@
+SET SCHEMA 'hr';
+
+/*Seleccionar aquellos empleados cuyo número de departamento esté entre el 80 y el 120 (ambos excluidos).*/
+
+SELECT DISTINCT employee_id, department_id
+FROM employees
+WHERE department_id > 80 AND department_id < 120;
+
+/* Seleccionar todos los países que contengan una letra a en la segunda posición.*/
+
+SELECT country_name
+FROM countries
+WHERE country_name LIKE '_a%';
+
+/*Seleccionar el nombre y apellidos de los empleados cuyo salario bruto anual sea mayor o igual que 100000$, 
+y que no sean contables (FI_ACCOUNT) (el salario que aparece en la tabla es el salario bruto mensual; en esta
+empresa se cobran 14 pagas al año).*/
+
+SELECT first_name, last_name, salary
+FROM employees
+WHERE salary * 14 >= 100000;
+
+/*Seleccionar aquellos departamentos cuyo nombre contega dos letras t.*/
+
+SELECT department_name
+FROM departments
+WHERE department_name LIKE '%t%t%';
+
+/*Seleccionar las localizaciones que estén en las ciudades de Toronto u Oxford, o bien en el estado de
+California.*/
+
+SELECT *
+FROM locations
+WHERE city = 'Toronto' OR city = 'Oxford' OR state_province = 'California';

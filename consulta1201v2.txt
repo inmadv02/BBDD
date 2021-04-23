@@ -1,0 +1,35 @@
+SELECT *
+FROM employees
+WHERE salary >= (
+
+                 SELECT salary
+                 FROM employees
+                 WHERE employee_id = 113
+                );
+
+
+Seleccionar aquellos empleados
+ que cobran más que los del departamento 10
+
+SELECT *
+FROM employees
+WHERE salary > ANY (
+                
+                SELECT *
+                FROM employees
+                WHERE department_id = 10
+               );
+
+Seleccionar aquellos empleados que estén en un departamento
+en el que haya empleados que se dieran de alta en lunes o martes
+
+SELECT *
+FROM employees
+WHERE department_id IN (
+			SELECT DISTINCT department_id
+			FROM employee
+			WHERE to_char(hire_date, 'ID) IN ('1', '2')
+			ORDER BY department_id
+		       )
+
+AND last_name ILIKE '%e%';
