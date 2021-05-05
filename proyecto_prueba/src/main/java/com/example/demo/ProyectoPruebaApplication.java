@@ -13,8 +13,10 @@ public class ProyectoPruebaApplication {
 	}
 	
 //	@Bean
-//	public CommandLineRunner showBeanNames(MiPrimerBean) {
-//		
+//	public CommandLineRunner showBeanNames(MiPrimerBean bean) {
+//		return args -> (
+//				System.out.println(bean.upperCase());
+//		);
 //	}
 
 }
